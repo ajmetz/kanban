@@ -1,0 +1,9 @@
+# Andrew's Back End Ignore List:
+log.txt
+pid.txt
+/*local.conf
+renametoreload*
+*.*-shm
+*.*-wal
+node_modules
+build
