@@ -20,12 +20,17 @@ sub test_object ($self) {
                                 content => 'Susie',
                             );
 
-    my  $content        =   $ticket->id.$separator.$ticket->content.
+    my  $text           =   $ticket->id.$separator.$ticket->content.
                             $new_line.
                             $ticket_two->id.$separator.$ticket_two->content.
                             $new_line.
                             $ticket_three->id.$separator.$ticket_three->content;
 
+    my  $content={
+        content       =>  $text,
+    };
+
+    warn "Text is: ".$text;
     $self->render(
         text            =>  $self->generate_layout($content)
     );

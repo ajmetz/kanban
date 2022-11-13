@@ -6,7 +6,7 @@ use     Mojo::File qw(curfile);
 sub register {
     my  ($self, $app, $conf)            =   @_;
     my  $after_auto                     =   $app->routes->under('/')->to('Auto#auto');
-    my  $after_auto_and_stash_values    =   $after_auto->under('/*left_overs')->to(controller => 'StashValues', action => 'stash_values', left_overs => undef);
+    my  $after_auto_and_stash_values    =   $after_auto->under('/')->to(controller => 'StashValues', action => 'stash_values');
 
     #test object:
     $after_auto_and_stash_values->any(
