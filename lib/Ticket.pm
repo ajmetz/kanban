@@ -1,11 +1,10 @@
 package Ticket;
 use Mojo::Base -base, -signatures;
-use Data::UUID;
 
-my $unique_ids = Data::UUID->new;
+my $unique_ids = 0;
 
 has 'content';
-has 'id' => sub { $unique_ids->to_string($unique_ids->create()) };
+has 'id' => sub { $unique_ids++ };
 
 1;
 
