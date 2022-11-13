@@ -1,4 +1,4 @@
-package Kanban::Plugin::Routes;
+package Kanban::Plugins::Routes;
 use Mojo::Base 'Mojolicious::Plugin';
 
 use     Mojo::File qw(curfile);
@@ -13,7 +13,7 @@ sub register {
         ['GET', 'POST'] => '/test_object'
     )
     ->to(
-        controller      => 'Example', 
+        controller      => 'Test', 
         action          => 'test_object',
         left_overs      => undef #default
     );
@@ -23,8 +23,8 @@ sub register {
         ['GET', 'POST'] =>  '/*left_overs'
     )
     ->to(
-        controller      =>  'Example',
-        action          =>  'welcome',
+        controller      =>  'Home',
+        action          =>  'home',
         left_overs      =>  undef #default
     );
 
