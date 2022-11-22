@@ -28,6 +28,17 @@ sub register {
         left_overs      => undef #default
     );
 
+    #Boards Create:
+    $after_auto_and_stash_values->any(
+        ['GET', 'POST'] => '/create_option'
+    )
+    ->to(
+        controller      => 'Options', 
+        action          => 'create_option',
+        left_overs      => undef #default
+    );
+
+
     # Default Home Page - due to the use of left_overs as a catch all - it has to come last:
     $after_auto_and_stash_values->any(
         ['GET', 'POST'] =>  '/*left_overs'
