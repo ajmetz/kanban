@@ -1,4 +1,4 @@
-package Column;
+package Kanban::Objects::Column;
 use Mojo::Base -base, -signatures;
 
 has 'tickets';

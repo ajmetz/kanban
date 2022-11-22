@@ -1,17 +1,15 @@
 package Kanban::Controller::Boards;
 use Mojo::Base 'Mojolicious::Controller', -signatures;
-use Board;
+use Kanban::Objects::Board;
 
-sub create ($self) {
-
-    #Initial Values:
-    my  $instance_of_board = Board->new;
-
-    my  $content    =   "Board ".$instance_of_board->id;
-
-    my  $layouts_content={
-        content       =>  $content,
-    };
+sub create
+(
+    $self,
+    $layouts_content    =   {
+        content         =>  "Board ".Kanban::Objects::Board->new->id,
+    }
+) 
+{
 
     $self->render(
         text            =>  $self->generate_layout($layouts_content)

@@ -16,8 +16,8 @@ sub startup ($self) {
     $self->home(Mojo::Home->new(curfile->sibling('Kanban')));
 
     # Database:
-    my  $db_connection  =   $self->home->child('database','test.db');
-    my  $db_migration   =   $self->home->child('database','migration.sql');
+    my  $db_connection  =   $self->home->child('Database','test.db');
+    my  $db_migration   =   $self->home->child('Database','migration.sql');
 
     $self->plugin('Kanban::Plugins::Database',{ connection => $db_connection });
     $self->database->auto_migrate(1)->migrations->name('Test Migrations')->from_file($db_migration);

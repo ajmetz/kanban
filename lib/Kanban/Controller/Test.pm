@@ -1,6 +1,6 @@
 package Kanban::Controller::Test;
 use Mojo::Base 'Mojolicious::Controller', -signatures;
-use Ticket;
+use Kanban::Objects::Ticket;
 
 sub test_object ($self) {
 
@@ -8,15 +8,15 @@ sub test_object ($self) {
     my  $new_line       =   '<BR>';
     my  $separator      =   ': ';
 
-    my  $ticket         =   Ticket->new(
+    my  $ticket         =   Kanban::Objects::Ticket->new(
                                 content => 'Tra-la-la',
                             );
 
-    my  $ticket_two     =   Ticket->new(
+    my  $ticket_two     =   Kanban::Objects::Ticket->new(
                                 content => 'Bob',
                             );
 
-    my  $ticket_three   =   Ticket->new(
+    my  $ticket_three   =   Kanban::Objects::Ticket->new(
                                 content => 'Susie',
                             );
 

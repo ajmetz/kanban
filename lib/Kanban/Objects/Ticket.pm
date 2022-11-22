@@ -1,4 +1,4 @@
-package Ticket;
+package Kanban::Objects::Ticket;
 use Mojo::Base -base, -signatures;
 
 my $unique_ids = 0;
